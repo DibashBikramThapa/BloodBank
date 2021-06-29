@@ -1,0 +1,21 @@
+{% extends "record/base.html" %}
+{% block content %}
+{% load bootstrap5 %}
+
+<div class="container mt-4 pt-4">
+  <div class="jumbotron">
+  <h1>Please SignUp!</h1>
+  <br>
+  <form enctype="multipart/form-data" method="POST">
+    {% csrf_token %}
+    {% bootstrap_form history_form %}
+    {% buttons %}
+      <button type="submit" class="btn btn-danger">Update</button>
+    {% endbuttons %}
+  </form>
+</div>
+</div>
+
+
+
+{% endblock %}

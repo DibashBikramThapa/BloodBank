@@ -1,0 +1,62 @@
+{% extends "record/base.html" %}
+{% load static %}
+{% block content %}
+
+
+<div class="container mt-5 pt-4 text-center">
+  <img class="img-fluid "src="{% static "image/bloodtop.png" %}" alt="">
+</div>
+
+<div class="mt-5 pt-2">
+  <div class="row g-0">
+    <div class="col card-img">
+      <img class="img-fluid" src="{% static "image/bloodleft.png" %}" alt="fail">
+    </div>
+    <div class="col-sm-6 ">
+      <div class="card-body">
+        <div class="card-text text-center">
+          <h3 id="one">Welcome To BloodBank
+            <br><br>
+
+             Donate and be a part of a cause</h3>
+
+        </div>
+        <h3 class="mt-4 pt-3 text-center">Here are the donor list:</h3>
+        {% if donor_list %}
+        <div class="table-responsive-lg">
+          <table class="table table-hover table-bordered">
+            <thead class="thead-dark">
+              <th scope="col">Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Address</th>
+              <th scope="col">PhoneNo.</th>
+              <th scope="col">Bloodgroup</th>
+            </thead>
+            {% for i in donor_list %}
+              <tr>
+                <td>{{ i.user.username }}</td>
+                <td>{{i.email}}</td>
+                <td>{{ i.address}}</td>
+                <td>{{ i.phonenumber}}</td>
+                <td>{{ i.bloodgroup}}</td>
+                </tr>
+            {% endfor %}
+          </table>
+        </div>
+        {% else %}
+          <p>No donated record found</p>
+        {% endif %}
+      </div>
+    </div>
+      <div class="col card-img">
+        <img class="img-fluid float-right"src="{% static "image/bloodright.png" %}" alt="">
+      </div>
+    </div>
+  </div>
+
+<script src="{% static "record/color.js" %}">
+
+</script>
+
+
+{% endblock %}

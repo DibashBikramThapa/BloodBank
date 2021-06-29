@@ -1,0 +1,26 @@
+{% extends "record/base.html" %}
+{% block content %}
+{% load bootstrap5 %}
+
+<div class="container mt-3 pt-3">
+  <div class="jumbotron">
+  {% if registered %}
+    <h1>Thank you for signup!</h1>
+  {% else %}
+    <h1>SignUp to donate!</h1>
+    <br>
+    <form enctype="multipart/form-data" method="post">
+      {% csrf_token %}
+      {% bootstrap_form user_form %}
+      {% bootstrap_form donor_form %}
+      {% buttons %}
+        <button type="submit" class="btn btn-primary">Sign Up</button>
+      {% endbuttons %}
+    </form>
+  {% endif %}
+</div>
+</div>
+
+
+
+{% endblock %}

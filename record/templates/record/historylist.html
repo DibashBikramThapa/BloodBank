@@ -1,0 +1,33 @@
+{% extends "record/base.html" %}
+
+{% block content %}
+
+<div class="container mt-3 pt-3">
+  <div class="jumbotron">
+
+<h1>Here are the latest data:</h1>
+
+<div class="table-responsive-lg mt-3 pt-2">
+  <table class="table table-hover table-bordered">
+    <thead class="thead-dark">
+      <th scope="col">Name</th>
+      <th scope="col">Lastdonateddate</th>
+      <th scope="col">Email</th>
+      <th scope="col">Address</th>
+      <th scope="col">PhoneNo.</th>
+      <th scope="col">Bloodgroup</th>
+    </thead>
+    {% for i in history_list%}
+    <tr>
+      <td>{{i.user}}</td>
+      <td>{{ i.lastdonateddate}}</td>
+      <td>{{i.user.donor.email}}</td>
+      <td>{{i.user.donor.address}}</td>
+      <td>{{i.user.donor.phonenumber}}</td>
+      <td>{{i.user.donor.bloodgroup}}</td>
+    </tr>
+    {% endfor %}
+
+</div>
+</div>
+{% endblock %}
