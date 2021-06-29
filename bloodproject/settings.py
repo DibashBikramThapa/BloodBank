@@ -25,7 +25,7 @@ TEMPLATE_DIR=os.path.join(BASE_DIR,"templates")
 SECRET_KEY = 'django-insecure-zqy*_hk9b%)towm2g)t67&x9mb#y0mvq6_felq=-!(i-hxfn7#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['blooddonorsystem.herokuapp.com','localhost', '127.0.0.1' ]
 
@@ -126,7 +126,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 #STATICFILES_DIRS = os.path.join(BASE_DIR, "static")
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
