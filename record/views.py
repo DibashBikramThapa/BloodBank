@@ -7,6 +7,7 @@ from accounts.models import Donor
 from .import historyform
 
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
 
 
 class HomeView(ListView):
@@ -17,7 +18,7 @@ class HomeView(ListView):
 
     template_name='record/index.html'
 
-
+@login_required()
 def CreateHistoryForm(request):
     if request.method == 'POST':
         history_form = historyform.HistroyForm(data=request.POST)
@@ -36,7 +37,7 @@ def CreateHistoryForm(request):
     return render(request,'record/createhistory.html',context)
 
 
-class HistoryView(ListView):
+class HistoryView(LoginRequiredMixin, ListView):
     model = History
     template_name='record/historylist.html'
 

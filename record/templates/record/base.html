@@ -19,9 +19,9 @@
           </div>
             {% if user.is_authenticated %}
 
-              <a class="nav-link" href="{% url 'record:historylist' %}"> <h4>History </h4></a>
+              <a class="nav-link" href="{% url 'record:historylist' %}" target="_blank"> <h4>History </h4></a>
 
-              <a class ="nav-link" href="{% url 'record:createhistory' %}"> <h4>Update Record</h4> </a>
+              <a class ="nav-link" href="{% url 'record:createhistory' %}" target="_blank"> <h4>Update Record</h4> </a>
 
             <div class="nav navbar-nav ml-auto">
               <a class="nav-link" href="{% url 'accounts:logout' %}"> <h4>Logout </h4></a>
