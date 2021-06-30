@@ -4,29 +4,39 @@
 
 
 <div class="container mt-5 pt-4 text-center">
+  <!-- top image -->
   <img class="img-fluid "src="{% static "image/bloodtop.png" %}" alt="">
-</div>
 
-<div class="mt-5 pt-2">
-  <div class="row g-0">
-    <div class="col card-img">
-      <img class="img-fluid" src="{% static "image/bloodleft.png" %}" alt="fail">
-    </div>
-    <div class="col-sm-6 ">
-      <div class="card-body">
-        <div class="card-text text-center">
-          <h3 id="one">Welcome To BloodBank
-            <br><br>
 
-             Donate and be a part of a cause</h3>
-
+  <div class="mt-5 pt-2">
+    <div class="row g-0">
+      <!-- left image -->
+      <div class="col card-img">
+        <img class="img-fluid" src="{% static "image/bloodleft.png" %}" alt="fail">
+      </div>
+      <!-- image content -->
+      <div class="col-sm-6 ">
+        <div class="card-body">
+          <div class="card-text text-center">
+            <h3 id="one">Welcome To BloodBank
+              <br><br>
+               Donate and be a part of a cause</h3>
+          </div>
+          <h3 class="mt-3 pt-3 text-center">Here are the donor list:</h3>
         </div>
-        <h3 class="mt-5 pt-5 text-center">Here are the donor list:</h3>
-        {% if donor_list %}
-        <br>
-        <br>
-        <div class="table-responsive-md">
-          <table class="table table-hover table-bordered">
+      </div>
+      <!-- right image-->
+      <div class="col card-img">
+          <img class="img-fluid float-right"src="{% static "image/bloodright.png" %}" alt="">
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-3 pt-3">
+      {% if donor_list %}
+      <div class="row justify-content-center">
+        <div class="col-auto">
+        <table class="table table-hover table-bordered table-responsive">
             <thead class="thead-dark">
               <th scope="col">Name</th>
               <th scope="col">Email</th>
@@ -43,18 +53,16 @@
                 <td>{{ i.bloodgroup}}</td>
                 </tr>
             {% endfor %}
-          </table>
+        </table>
         </div>
-        {% else %}
-          <p>No donated record found</p>
-        {% endif %}
       </div>
-    </div>
-      <div class="col card-img">
-        <img class="img-fluid float-right"src="{% static "image/bloodright.png" %}" alt="">
-      </div>
-    </div>
+      {% else %}
+        <p>No donated record found</p>
+      {% endif %}
   </div>
+
+</div>
+
 
 <script src="{% static "record/color.js" %}">
 
