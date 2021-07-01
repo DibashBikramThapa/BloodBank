@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from django.urls import reverse_lazy
 
-from django.views.generic import ListView,CreateView,DetailView
+from django.views.generic import ListView,CreateView,DetailView,UpdateView
 from record.models import History
 from accounts.models import Donor
 from .import historyform
@@ -35,7 +35,7 @@ def CreateHistoryForm(request):
     else:
         history_form=historyform.HistroyForm()
     context={'history_form':history_form}
-    return render(request,'record/createhistory.html',context)
+    return render(request,'record/history_form.html',context)
 
 
 class HistoryView(LoginRequiredMixin, ListView):
@@ -45,7 +45,7 @@ class HistoryView(LoginRequiredMixin, ListView):
     def get_queryset(self):
         return History.objects.order_by('-lastdonateddate')
 
-class HistoryDetailView(LoginRequiredMixin, SelectRelatedMixin, DetailView):
+class ProfileDetailView(LoginRequiredMixin, SelectRelatedMixin, DetailView):
     model = History
     template_name='record/profiledetail.html'
     select_related=('user',)
@@ -55,3 +55,12 @@ class HistoryDetailView(LoginRequiredMixin, SelectRelatedMixin, DetailView):
         return queryset.filter(
             user__username__iexact=self.kwargs.get('username')
         )
+
+class HistoryUpdateView(LoginRequiredMixin, SelectRelatedMixin,UpdateView):
+    login_url='/login'
+    redirect_field_name='record/historylist.html'
+    template_name='record/profile_form.html'
+    select_related=('user',)
+
+    model = History
+    form_class=historyform.HistroyForm

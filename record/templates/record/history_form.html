@@ -6,11 +6,12 @@
   <div class="jumbotron">
   <h1>Enter the last donated date!</h1>
   <br>
+  <h2>Name: {{request.user.username}}</h2>
   <form enctype="multipart/form-data" method="POST">
     {% csrf_token %}
     {% bootstrap_form history_form %}
     {% buttons %}
-      <button type="submit" class="btn btn-danger">Update</button>
+      <button type="submit" class="btn btn-danger">Save</button>
     {% endbuttons %}
   </form>
 </div>

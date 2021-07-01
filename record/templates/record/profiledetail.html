@@ -3,17 +3,25 @@
 
 
 
-  {% if request.user == history.user %}
-<div class="row text-center">
-  <div class="col ">
+{% if request.user == history.user %}
+  <div class="jumbotron">
 
-    <a>{{history.user.username}} </a><br>
-    <a>{{history.user.donor.phonenumber}} </a><br>
-    <a>{{history.user.donor.address}} </a><br>
-    <a>{{history.donor.bloodgroup}} </a><br>
-    <a>{{history.lastdonateddate}}</a><br>
-  </div>
-</div>
+
+    <div class="col text-left ">
+
+      <a>Username: {{history.user.username}} </a><br>
+      <a>Phonenumber:{{history.user.donor.phonenumber}} </a><br>
+      <a>Address:{{history.user.donor.address}} </a><br>
+      <a>BloodGroup:{{history.user.donor.bloodgroup}} </a><br>
+      <a>Lastdonated:{{history.lastdonateddate}}</a><br>
+      <a href="{%url 'record:profileupdate' username=history.user pk=history.pk%}">
+        <button type="button" class="btn-warning" name="Update">Update</button>
+      </a>
+    </div>
+      </div>
+
+
+
 
 {% endif %}
 

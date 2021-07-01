@@ -20,7 +20,11 @@
     {% for i in history_list %}
     <tr>
         {% if i.user == request.user %}
-          <td><a href="{% url 'record:historydetail' username=i.user.username pk=i.pk %}">{{i.user}}</a></td>
+          <td><a href="{% url 'record:historydetail' username=i.user.username pk=i.pk %}">{{i.user}}</a>
+            <a href="{%url 'record:profileupdate' username=i.user pk=i.pk%}">
+              <button type="button" class="btn-warning" name="Update">Update</button>
+            </a>
+          </td>
         {% else %}
           <td>{{i.user}}</td>
         {% endif %}

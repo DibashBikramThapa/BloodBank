@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib import auth
 from django.utils import timezone
 from accounts.models import Donor
+from django.urls import reverse
 
 class History(models.Model):
     user=models.ForeignKey('auth.User', on_delete=models.CASCADE)
@@ -9,10 +10,8 @@ class History(models.Model):
 
     def get_absolute_url(self):
         return reverse(
-                        "record:historydetail",
-                        kwargs={"username":self.user.username,
-                                'pk':self.pk
-                                })
+                        "record:historylist")
+
 
     def __str__(self):
         return self.user.username
