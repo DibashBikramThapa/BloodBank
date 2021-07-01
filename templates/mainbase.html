@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+  {% load static %}
+  {% load bootstrap5 %}
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title>BLOODBANK</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static "record/style1.css" %}"/>
+</head>
+  <body>
+
+    <nav class="navbar fixed-top navbar-expand bg-dark">
+
+        <div class="nav navbar-nav ">
+          <a class="nav-link" href="{% url "record:Home" %}"><h4>Home </h4></a>
+          <a class="nav-link" href="#"> <h4>About Us </h4></a>
+        </div>
+        {% if user.is_authenticated %}
+          <div class="nav navbar-nav ml-auto">
+            <a class="nav-link" href="{% url 'record:historylist' %}" target="_blank"> <h4>History </h4></a>
+            <a class ="nav-link" href="{% url 'record:createhistory' %}" target="_blank"> <h4>Update Record</h4> </a>
+            <a class="nav-link" href="{% url 'accounts:logout' %}"> <h4>Logout </h4></a>
+            <a class="nav-link"><h4 > {{request.user}} </h4></a>
+
+        {% else %}
+              <a class="nav-link " href="{% url 'accounts:signup' %}"> <button type="button" class='btn btn-sm btn-warning '><h4 >SignUp</h4></button></a>
+              <a class="nav-link me-3" href="{% url 'accounts:login' %}"><h4>Login </h4> </a>
+        </div>
+        {% endif %}
+
+    </nav>
+
+    <div class="container mt-5 pt-4 text-center">
+      <!-- top image -->
+      <img class="img-fluid "src="{% static "image/bloodtop.png" %}" alt="">
+
+
+      <div class=" mt-5 pt-2">
+        <div class="row g-0">
+          <!-- left image -->
+          <div class="col-3 card-img">
+            <img class="img-fluid float-left" src="{% static "image/bloodleft.png" %}" alt="fail">
+          </div>
+
+            <div class="card-body">
+              {% block content %}
+
+              {% endblock %}
+            </div>
+
+        <div class="col-3 card-img">
+            <img class="img-fluid float-right"src="{% static "image/bloodright.png" %}" alt="">
+        </div>
+        </div>
+      </div>
+
+<script src="{% static "record/color.js" %}" charset="utf-8"></script>
+  </body>
+</html>

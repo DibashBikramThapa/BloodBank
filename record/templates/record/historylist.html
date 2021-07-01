@@ -17,9 +17,13 @@
       <th scope="col">PhoneNo.</th>
       <th scope="col">Bloodgroup</th>
     </thead>
-    {% for i in history_list%}
+    {% for i in history_list %}
     <tr>
-      <td>{{i.user}}</td>
+        {% if i.user == request.user %}
+          <td><a href="{% url 'record:historydetail' username=i.user.username pk=i.pk %}">{{i.user}}</a></td>
+        {% else %}
+          <td>{{i.user}}</td>
+        {% endif %}
       <td>{{ i.lastdonateddate}}</td>
       <td>{{i.user.donor.email}}</td>
       <td>{{i.user.donor.address}}</td>

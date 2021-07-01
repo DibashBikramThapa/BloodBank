@@ -9,5 +9,6 @@ urlpatterns=[
     path('',views.HomeView.as_view(),name='Home'),
     path('createhistory/',views.CreateHistoryForm,name='createhistory'),
     path('historylist/',views.HistoryView.as_view(),name='historylist'),
+    path('history/<username>/<int:pk>',views.HistoryDetailView.as_view(),name='historydetail'),
 
     ]

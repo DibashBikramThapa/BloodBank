@@ -1,0 +1,22 @@
+{% extends "mainbase.html" %}
+{% block content %}
+
+
+
+  {% if request.user == history.user %}
+<div class="row text-center">
+  <div class="col ">
+
+    <a>{{history.user.username}} </a><br>
+    <a>{{history.user.donor.phonenumber}} </a><br>
+    <a>{{history.user.donor.address}} </a><br>
+    <a>{{history.donor.bloodgroup}} </a><br>
+    <a>{{history.lastdonateddate}}</a><br>
+  </div>
+</div>
+
+{% endif %}
+
+
+
+{% endblock %}

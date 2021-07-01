@@ -1,11 +1,12 @@
 from django.shortcuts import render,redirect
 from django.urls import reverse_lazy
 
-from django.views.generic import ListView,CreateView
+from django.views.generic import ListView,CreateView,DetailView
 from record.models import History
 from accounts.models import Donor
 from .import historyform
 
+from braces.views import SelectRelatedMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 
@@ -43,3 +44,14 @@ class HistoryView(LoginRequiredMixin, ListView):
 
     def get_queryset(self):
         return History.objects.order_by('-lastdonateddate')
+
+class HistoryDetailView(LoginRequiredMixin, SelectRelatedMixin, DetailView):
+    model = History
+    template_name='record/profiledetail.html'
+    select_related=('user',)
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        return queryset.filter(
+            user__username__iexact=self.kwargs.get('username')
+        )
