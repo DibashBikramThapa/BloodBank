@@ -13,28 +13,23 @@
     <nav class="navbar fixed-top navbar-expand bg-dark">
 
         <div class="nav navbar-nav ">
-            <a class="nav-link" href="{% url "record:Home" %}"><h4>Home </h4></a>
-            <a class="nav-link" href="#"> <h4>About Us </h4></a>
-          </div>
-            {% if user.is_authenticated %}
-            <div class="nav navbar-nav">
-              <a class="nav-link" href="{% url 'record:historylist' %}" target="_blank"> <h4>History </h4></a>
-              <a class ="nav-link" href="{% url 'record:createhistory' %}" target="_blank"> <h4>Update Record</h4> </a>
-            </div>
-            <div class="nav navbar-nav ml-auto">
-              <a class="nav-link" href="{% url 'accounts:logout' %}"> <h4>Logout </h4></a>
-
-              <a class="nav-link"><h4 > {{request.user}} </h4></a>
-            </div>
-            {% else %}
-            <div class="nav navbar-nav ml-auto">
-              <a class="nav-link " href="{% url 'accounts:signup' %}"> <button type="button" class='btn btn-sm btn-warning '><h4 >SignUp</h4></button></a>
-
-              <a class="nav-link me-3" href="{% url 'accounts:login' %}"><h4>Login </h4> </a>
-
-            {% endif %}
+          <a class="nav-link" href="{% url "record:Home" %}"><h4>Home </h4></a>
+          <a class="nav-link" href="#"> <h4>About Us </h4></a>
         </div>
-        </p>
+        {% if user.is_authenticated %}
+          <div class="nav navbar-nav ml-auto">
+            <a class="nav-link" href="{% url 'record:historylist' %}" target="_blank"> <h4>History </h4></a>
+            <a class ="nav-link" href="{% url 'record:createhistory' %}" target="_blank"> <button type="button" class='btn btn-sm btn-warning'> <h4>Enter Record</h4></button> </a>
+            <a class="nav-link" href="{% url 'accounts:logout' %}"> <h4>Logout </h4></a>
+            <a class="nav-link"><h4 > {{request.user}} </h4></a>
+          </div>
+        {% else %}
+          <div class="nav navbar-nav ml-auto">
+            <a class="nav-link " href="{% url 'accounts:signup' %}"> <button type="button" class='btn btn-sm btn-warning '><h4 >SignUp</h4></button></a>
+            <a class="nav-link me-3" href="{% url 'accounts:login' %}"><h4>Login </h4> </a>
+          </div>
+        {% endif %}
+
 
     </nav>
 

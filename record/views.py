@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from django.urls import reverse_lazy
 
-from django.views.generic import ListView,CreateView,DetailView,UpdateView
+from django.views.generic import ListView,CreateView,DetailView,UpdateView,DeleteView
 from record.models import History
 from accounts.models import Donor
 from .import historyform
@@ -64,3 +64,16 @@ class HistoryUpdateView(LoginRequiredMixin, SelectRelatedMixin,UpdateView):
 
     model = History
     form_class=historyform.HistroyForm
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        return queryset.filter(user_id=self.request.user.id)
+
+class DeleteHistoryView(LoginRequiredMixin, SelectRelatedMixin, DeleteView):
+    model = History
+    select_related=('user',)
+    success_url=reverse_lazy('record:historylist')
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        return queryset.filter(user_id=self.request.user.id)

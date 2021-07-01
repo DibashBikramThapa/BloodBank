@@ -15,7 +15,10 @@
       <a>BloodGroup:{{history.user.donor.bloodgroup}} </a><br>
       <a>Lastdonated:{{history.lastdonateddate}}</a><br>
       <a href="{%url 'record:profileupdate' username=history.user pk=history.pk%}">
-        <button type="button" class="btn-warning" name="Update">Update</button>
+        <button type="button" class="btn-warning">Update</button>
+      </a>
+      <a href="{%url 'record:deletehistory' username=history.user pk=history.pk%}">
+        <button type="button" class="btn-danger">Delete</button>
       </a>
     </div>
       </div>
