@@ -2,13 +2,8 @@
 {% block content %}
 
 
-
-{% if request.user == history.user %}
   <div class="jumbotron">
-
-
     <div class="col text-left ">
-
       <a>Username: {{history.user.username}} </a><br>
       <a>Phonenumber:{{history.user.donor.phonenumber}} </a><br>
       <a>Address:{{history.user.donor.address}} </a><br>
@@ -22,12 +17,5 @@
       </a>
     </div>
       </div>
-
-
-
-
-{% endif %}
-
-
 
 {% endblock %}

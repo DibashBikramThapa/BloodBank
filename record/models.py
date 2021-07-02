@@ -4,6 +4,9 @@ from django.utils import timezone
 from accounts.models import Donor
 from django.urls import reverse
 
+from django.contrib.auth import get_user_model
+User = get_user_model()
+
 class History(models.Model):
     user=models.ForeignKey('auth.User', on_delete=models.CASCADE)
     lastdonateddate = models.DateField(default=timezone.now())
