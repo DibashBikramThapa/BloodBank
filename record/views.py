@@ -3,7 +3,7 @@ from django.urls import reverse_lazy
 
 from django.views.generic import ListView,CreateView,DetailView,UpdateView,DeleteView
 from record.models import History
-from accounts.models import Donor
+from accounts.models import UserProfile
 from .import historyform
 
 from braces.views import SelectRelatedMixin
@@ -15,10 +15,10 @@ User = get_user_model()
 
 
 class HomeView(ListView):
-    model = Donor
+    model = UserProfile
 
     def get_queryset(self):
-        return Donor.objects.order_by('-user')
+        return Donor.objects.order_by('-username')
 
     template_name='record/index.html'
 
