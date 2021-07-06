@@ -22,7 +22,7 @@
         {% if i.user == request.user %}
           <td>
             <div class="col">
-              <a href="{% url 'record:historydetail' username=i.user.username pk=i.pk %}">{{i.user}}</a>
+              <a href="{% url 'record:historydetail' username=i.user.username pk=i.pk %}">{{i.user.username}}</a>
             </div>
             <div class="col text-left">
               <a href="{%url 'record:profileupdate' username=i.user pk=i.pk%}">
@@ -39,10 +39,10 @@
           <td>{{i.user}}</td>
         {% endif %}
       <td>{{ i.lastdonateddate}}</td>
-      <td>{{i.user.donor.email}}</td>
-      <td>{{i.user.donor.address}}</td>
-      <td>{{i.user.donor.phonenumber}}</td>
-      <td>{{i.user.donor.bloodgroup}}</td>
+      <td>{{i.email}}</td>
+      <td>{{i.user.address}}</td>
+      <td>{{i.phonenumber}}</td>
+      <td>{{i.user.bloodgroup}}</td>
     </tr>
     {% endfor %}
 

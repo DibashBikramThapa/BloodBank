@@ -5,9 +5,9 @@
   <div class="jumbotron">
     <div class="col text-left ">
       <a>Username: {{history.user.username}} </a><br>
-      <a>Phonenumber:{{history.user.donor.phonenumber}} </a><br>
-      <a>Address:{{history.user.donor.address}} </a><br>
-      <a>BloodGroup:{{history.user.donor.bloodgroup}} </a><br>
+      <a>Phonenumber:{{history.user.phonenumber}} </a><br>
+      <a>Address:{{history.user.address}} </a><br>
+      <a>BloodGroup:{{history.user.bloodgroup}} </a><br>
       <a>Lastdonated:{{history.lastdonateddate}}</a><br>
       <a href="{%url 'record:profileupdate' username=history.user pk=history.pk%}">
         <button type="button" class="btn-warning">Update</button>

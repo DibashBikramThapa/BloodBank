@@ -18,7 +18,7 @@ class HomeView(ListView):
     model = UserProfile
 
     def get_queryset(self):
-        return Donor.objects.order_by('-username')
+        return UserProfile.objects.order_by('-username')
 
     template_name='record/index.html'
 

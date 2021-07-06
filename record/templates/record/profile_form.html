@@ -1,18 +1,18 @@
-{% extends 'mainbase.html' %}
+{% extends "mainbase.html" %}
 
 {% block content %}
 
-<div class="jumbotron">
 
 
-  {{history.user}}
-<form class="" method="POST">
+
+  {{history.user.username}}
+<form class="form" method="POST">
   {% csrf_token %}
   {{form.as_p}}
   <button type="submit"class="btn btn-warning">Update</button>
 
 </form>
 
-</div>
+
 
 {% endblock %}
