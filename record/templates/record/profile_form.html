@@ -6,7 +6,7 @@
 
 
   {{history.user.username}}
-<form class="form" method="POST">
+<form class="col form" method="POST">
   {% csrf_token %}
   {{form.as_p}}
   <button type="submit"class="btn btn-warning">Update</button>

@@ -5,5 +5,6 @@ from accounts.models import UserProfile
 
 class UserCreateForm(UserCreationForm):
     class Meta:
-        fields = ("email","username", "password1", "password2")
-        
+        fields = ("email","username", "password1", "password2",
+                "phonenumber","bloodgroup","address")
+        model= get_user_model()
