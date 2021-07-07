@@ -2,19 +2,23 @@
 {% block content %}
 {% load bootstrap5 %}
 
-<div class="container mt-3 pt-3">
-  <div class="jumbotron">
-
-    <h1>SignUp to donate!</h1>
+<div class="container mt-5 pt-5">
     <br>
+    <div class="row justify-content-center">
+    <div class="card tex-center shadow" style="width:30rem;">
     <form class="form" method="POST">
       {% csrf_token %}
-      {% bootstrap_form form %}
-      {% buttons %}
-        <button type="submit" class="btn btn-primary">Sign Up</button>
-      {% endbuttons %}
-    </form>
-</div>
+
+        <div class="card-body">
+          <h1 class="card-title">SignUp!</h1>
+              {% bootstrap_form form %}
+              {% buttons %}
+              <button type="submit" class="btn btn-primary">Sign Up</button>
+            {% endbuttons %}
+          </div>
+      </form>
+      </div>
+
 </div>
 
 

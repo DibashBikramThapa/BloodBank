@@ -88,7 +88,7 @@ DATABASES = {
         'HOST':'127.0.0.1',
         'USER': 'root',
         'PASSWORD':'',
-        'PORT':'3307',
+        'PORT':'3306',
 
     }
 }
