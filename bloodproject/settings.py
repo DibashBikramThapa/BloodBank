@@ -25,7 +25,7 @@ TEMPLATE_DIR=os.path.join(BASE_DIR,"templates")
 SECRET_KEY = 'django-insecure-zqy*_hk9b%)towm2g)t67&x9mb#y0mvq6_felq=-!(i-hxfn7#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['blooddonorsystem.herokuapp.com','localhost', '127.0.0.1' ]
 
@@ -83,12 +83,9 @@ WSGI_APPLICATION = 'bloodproject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'db_bloodbank',
-        'HOST':'127.0.0.1',
-        'USER': 'root',
-        'PASSWORD':'',
-        'PORT':'3306',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR /'db.sqlite3',
+
 
     }
 }
