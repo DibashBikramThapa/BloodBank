@@ -32,7 +32,12 @@
     </div>
   </div>
 
-  <div class="mt-3 pt-3">
+<div class="mt-3 pt-3">
+  <form class="d-flex justify-content-center" action="{% url 'record:search' %}" method="get">
+      <input name="q" style="width:18rem;" type="text" placeholder="Search bloodgroup, address" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+    <br>
       {% if userprofile_list%}
       <div class="row justify-content-center">
         <div class="col-auto">
@@ -54,7 +59,7 @@
                 </tr>
             {% endfor %}
         </table>
-        </div>
+
       </div>
       {% else %}
         <p>No donated record found</p>

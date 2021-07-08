@@ -9,6 +9,7 @@ from .import historyform
 from braces.views import SelectRelatedMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
+from django.db.models import Q as s
 
 from django.contrib.auth import get_user_model
 User = get_user_model()
@@ -19,6 +20,17 @@ class HomeView(ListView):
 
     def get_queryset(self):
         return UserProfile.objects.order_by('-username')
+
+    template_name='record/index.html'
+
+class SearchView(ListView):
+    model = UserProfile
+
+    def get_queryset(self):
+        query = self.request.GET.get('q')
+        return UserProfile.objects.filter(
+                        s(bloodgroup__icontains=query) | s(address__icontains=query)
+                        )
 
     template_name='record/index.html'
 
