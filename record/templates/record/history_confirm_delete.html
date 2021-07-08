@@ -1,8 +1,11 @@
 {% extends "mainbase.html" %}
 {% block content %}
-  <form action="" method="post">{% csrf_token %}
-    <p>Are you sure you want to delete <br>
-              "{{object}}"<br>"{{ object.lastdonateddate }}"?</p>
-    <input class='btn btn-danger' type="submit" value="Confirm" />
-  </form>
+  <div class="col jumbotron text-center">
+
+    <form action="" method="post">{% csrf_token %}
+      <p>Are you sure you want to delete <br>
+                "{{object}}"<br>"{{ object.lastdonateddate }}"?</p>
+      <input class='btn btn-danger' type="submit" value="Confirm" />
+    </form>
+  </div>
 {% endblock %}

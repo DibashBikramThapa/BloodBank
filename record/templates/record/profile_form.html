@@ -3,11 +3,10 @@
 {% block content %}
 {% load bootstrap5 %}
 
-  <div class="col jumbotron text-left">
+  <div class="col jumbotron text-center">
 
     <form class="form" method="POST">
       {% csrf_token %}
-
         {{history.user.username}}
         {% bootstrap_form form %}
       <button type="submit"class="btn btn-warning">Update</button>
