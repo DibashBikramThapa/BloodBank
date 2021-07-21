@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from django.urls import reverse_lazy
 
-from django.views.generic import ListView,CreateView,DetailView,UpdateView,DeleteView
+from django.views.generic import View,ListView,CreateView,DetailView,UpdateView,DeleteView
 from record.models import History
 from accounts.models import UserProfile
 from .import historyform
@@ -91,3 +91,25 @@ class DeleteHistoryView(LoginRequiredMixin, SelectRelatedMixin, DeleteView):
     def get_queryset(self):
         queryset = super().get_queryset()
         return queryset.filter(user_id=self.request.user.id)
+
+
+class Bmi(View):
+    def get(self,*args,**kwargs):
+
+        form =historyform.BMIForm()
+        dict={'form':form,
+                'getvalue':False}
+        return render(self.request, "record/bmi.html",context=dict)
+
+    def post(self,*args,**kwargs):
+        form=historyform.BMIForm(self.request.POST or None)
+        if form.is_valid():
+            height_m=form.cleaned_data.get('height_m')
+            weight_kg=form.cleaned_data.get('weight_kg')
+            bmivalue=height_m/(weight_kg **2)
+            my_dict={'form':form,
+                    'BMIValue':bmivalue,
+                    'getvalue':True}
+            return render(self.request,"record/bmi.html", context=my_dict)
+        else:
+            print('errors')
