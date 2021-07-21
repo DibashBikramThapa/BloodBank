@@ -106,7 +106,7 @@ class Bmi(View):
         if form.is_valid():
             height_m=form.cleaned_data.get('height_m')
             weight_kg=form.cleaned_data.get('weight_kg')
-            bmivalue=height_m/(weight_kg **2)
+            bmivalue=weight_kg/(height_m **2)
             my_dict={'form':form,
                     'BMIValue':bmivalue,
                     'getvalue':True}

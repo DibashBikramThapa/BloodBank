@@ -13,14 +13,22 @@
 
   <form class="form" method="POST">
     {% csrf_token %}
-    {{form }}
+    {% bootstrap_form form %}
     {% buttons %}
       <button type="submit" class="btn btn-primary">Check</button>
     {% endbuttons %}
   </form>
+  <h5 class="card-text">
     {% if getvalue %}
-        <p> Your BMI is: <span class="badge rounded-pill bg-primary ">{{BMIValue}}</span>  </p>
+      {% if BMIValue <= 18.5  %}
+         Your BMI is: <span class="badge rounded-pill bg-warning ">{{BMIValue}} Underweight</span>
+      {% elif BMIValue <= 24.99 and BMIValue > 18.5 %}
+        Your BMI is: <span class="badge rounded-pill bg-primary ">{{BMIValue}} Normal</span>
+      {% else %}
+         Your BMI is: <span class="badge rounded-pill bg-danger ">{{BMIValue}} Overweight</span>
       {% endif %}
+    {% endif %}
+  </h5>
 </div>
       </div>
       </div>
