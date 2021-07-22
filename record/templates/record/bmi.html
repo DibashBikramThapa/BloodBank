@@ -18,17 +18,17 @@
       <button type="submit" class="btn btn-primary">Check</button>
     {% endbuttons %}
   </form>
-  <h5 class="card-text">
+  <h3 class="card-text">
     {% if getvalue %}
       {% if BMIValue <= 18.5  %}
-         Your BMI is: <span class="badge rounded-pill bg-warning ">{{BMIValue}} Underweight</span>
+         Your BMI is: <span class="badge rounded-pill bg-warning ">{{BMIValue}} <br> Underweight</span>
       {% elif BMIValue <= 24.99 and BMIValue > 18.5 %}
-        Your BMI is: <span class="badge rounded-pill bg-primary ">{{BMIValue}} Normal</span>
+        Your BMI is: <span class="badge rounded-pill bg-primary ">{{BMIValue}}<br> Normal</span>
       {% else %}
-         Your BMI is: <span class="badge rounded-pill bg-danger ">{{BMIValue}} Overweight</span>
+         Your BMI is: <span class="badge rounded-pill bg-danger ">{{BMIValue}} <br>Overweight</span>
       {% endif %}
     {% endif %}
-  </h5>
+  </h3>
 </div>
       </div>
       </div>
