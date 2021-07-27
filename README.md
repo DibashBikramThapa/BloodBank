@@ -55,16 +55,16 @@ For admin:
 ```
 ### Project SS
 
-* Homepage: ![Homepage](https://raw.githubusercontent.com/DibashBikramThapa/BloodBank/deploy/Project%20SS/Screenshot%20from%202021-07-08%2014-01-30.png?token=ARVQ27NL54MA7MEXNRFAAYDBAAOJE)
+* Homepage: ![Homepage](/home/funky/Desktop/practise/copy/copyBloodSystem/BloodProjectSS/Homepage.png)
 
-* Signup: ![signup](https://raw.githubusercontent.com/DibashBikramThapa/BloodBank/deploy/Project%20SS/Screenshot%20from%202021-07-08%2014-29-47.png?token=ARVQ27PVKCFEP52HRO35YP3BAAONA)
+* Signup: ![signup](/home/funky/Desktop/practise/copy/copyBloodSystem/BloodProjectSS/Signup.png)
 
-* Login: ![login](https://raw.githubusercontent.com/DibashBikramThapa/BloodBank/deploy/Project%20SS/Screenshot%20from%202021-07-08%2014-29-54.png?token=ARVQ27JWQ2QBCFBHXEV53A3BAAONC)
+* Login: ![login](/home/funky/Desktop/practise/copy/copyBloodSystem/BloodProjectSS/Login.png)
 
-* Enter last donated date: ![date](https://raw.githubusercontent.com/DibashBikramThapa/BloodBank/deploy/Project%20SS/Screenshot%20from%202021-07-08%2014-30-07.png?token=ARVQ27O5RGLSXD2ZRWXDBWDBAAPGY)
+* Enter last donated date: ![date](/home/funky/Desktop/practise/copy/copyBloodSystem/BloodProjectSS/date.png)
 
-* History list: ![History list](https://raw.githubusercontent.com/DibashBikramThapa/BloodBank/deploy/Project%20SS/Screenshot%20from%202021-07-08%2014-30-13.png?token=ARVQ27KU3S3RVZ4QMTH3KFTBAAPJK)
+* History list: ![History list](/home/funky/Desktop/practise/copy/copyBloodSystem/BloodProjectSS/historylist.png)
 
-* Edit/Update: ![edit](https://raw.githubusercontent.com/DibashBikramThapa/BloodBank/deploy/Project%20SS/Screenshot%20from%202021-07-08%2014-30-22.png?token=ARVQ27KEZW4JOKEBM4FS6TLBAAPPY)
+* Edit/Update: ![edit](/home/funky/Desktop/practise/copy/copyBloodSystem/BloodProjectSS/update.png)
 
-* Delete: ![delete](https://raw.githubusercontent.com/DibashBikramThapa/BloodBank/deploy/Project%20SS/Screenshot%20from%202021-07-08%2014-30-28.png?token=ARVQ27OOCGHDHNEHZOYBKDDBAAPRS)
+* Delete: ![delete](/home/funky/Desktop/practise/copy/copyBloodSystem/BloodProjectSS/delete.png)
