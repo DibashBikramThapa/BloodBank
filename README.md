@@ -55,16 +55,16 @@ For admin:
 ```
 ### Project SS
 
-* Homepage: ![Homepage](/home/funky/Desktop/practise/copy/copyBloodSystem/BloodProjectSS/Homepage.png)
+* Homepage: ![Homepage](/BloodProjectSS/Homepage.png)
 
-* Signup: ![signup](/home/funky/Desktop/practise/copy/copyBloodSystem/BloodProjectSS/Signup.png)
+* Signup: ![signup](/BloodProjectSS/Signup.png)
 
-* Login: ![login](/home/funky/Desktop/practise/copy/copyBloodSystem/BloodProjectSS/Login.png)
+* Login: ![login](/BloodProjectSS/Login.png)
 
-* Enter last donated date: ![date](/home/funky/Desktop/practise/copy/copyBloodSystem/BloodProjectSS/date.png)
+* Enter last donated date: ![date](/BloodProjectSS/date.png)
 
-* History list: ![History list](/home/funky/Desktop/practise/copy/copyBloodSystem/BloodProjectSS/historylist.png)
+* History list: ![History list](/BloodProjectSS/historylist.png)
 
-* Edit/Update: ![edit](/home/funky/Desktop/practise/copy/copyBloodSystem/BloodProjectSS/update.png)
+* Edit/Update: ![edit](BloodProjectSS/update.png)
 
-* Delete: ![delete](/home/funky/Desktop/practise/copy/copyBloodSystem/BloodProjectSS/delete.png)
+* Delete: ![delete](/BloodProjectSS/delete.png)
