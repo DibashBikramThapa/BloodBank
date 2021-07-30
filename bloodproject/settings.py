@@ -92,8 +92,8 @@ DATABASES = {
 
 
 import dj_database_url
-db_from_env = dj_database_url.config(conn_max_age=6000)
-DATABASES['default'].update(db_from_env)
+
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
 
 
