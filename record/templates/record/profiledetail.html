@@ -1,0 +1,20 @@
+{% extends "mainbase.html" %}
+{% block content %}
+
+  <div class="col jumbotron text-center">
+
+      <a>Username: {{history.user.username}} </a><br>
+      <a>Phonenumber:{{history.user.phonenumber}} </a><br>
+      <a>Address:{{history.user.address}} </a><br>
+      <a>BloodGroup:{{history.user.bloodgroup}} </a><br>
+      <a>Lastdonated:{{history.lastdonateddate}}</a><br>
+
+        <a href="{%url 'record:profileupdate' username=history.user pk=history.pk%}">
+          <button type="button" class="btn-warning">Update</button>
+        </a>
+        <a href="{%url 'record:deletehistory' username=history.user pk=history.pk%}">
+          <button type="button" class="btn-danger">Delete</button>
+        </a>
+    </div>
+
+{% endblock %}

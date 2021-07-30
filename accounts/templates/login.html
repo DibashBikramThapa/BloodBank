@@ -1,19 +1,26 @@
 {% extends "record/base.html" %}
 
-{% load bootstrap5 %}
-
 {% block content %}
-<div class="container mt-3 pt-3">
-  <div class="jumbotron">
-  <h1>Login</h1>
+{% load bootstrap5 %}
+<div class="container mt-5 pt-5">
   <br>
-  <form method="POST" class="form">
-    {% csrf_token %}
-    {% bootstrap_form form %}
-    {% buttons %}
-      <button type="submit" class="btn btn-primary">Login</button>
-    {% endbuttons %}
-  </form>
+  <div class="row justify-content-center">
+
+  <div class="card shadow" style="width:30rem;">
+    <br>
+    <div class="card-body">
+      <h1 class="card-title">Login</h1>
+
+
+      <form method="POST" class="form">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        {% buttons %}
+          <button type="submit" class="btn btn-primary">Login</button>
+        {% endbuttons %}
+      </form>
+    </div>
+  </div>
 </div>
 </div>
 {% endblock %}
