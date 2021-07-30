@@ -8,7 +8,7 @@ User = get_user_model()
 
 class History(models.Model):
     user=models.ForeignKey(UserProfile, on_delete=models.CASCADE)
-    lastdonateddate = models.DateField(default=timezone.now())
+    lastdonateddate = models.DateField(default=timezone.now(), blank=True)
 
     def get_absolute_url(self):
         return reverse(
